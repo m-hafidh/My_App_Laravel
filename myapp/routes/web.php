@@ -16,3 +16,19 @@ Route :: view ('/','homepage')->name('homepage');
 
 Route :: view('/projects','projects')->name('projects');
 
+// Creer une vue pour afficher de recettes sur le navigateur 
+
+Route :: get('/recipes', function () {
+ $recipes = [
+    1 =>  ['title' => 'spaghetti carbonara', 'ingredients'=>['pasta','Eggs', 'Chese','Baccon']],
+
+    2 =>  ['title' => 'Chicken Curry ', 'ingredients'=>['Chicken','Cocunut Milk', 'Curry Ponder']],
+
+    3 =>  ['title' => 'Vegetal Stir Fry', 'ingredients'=>['Crocoli','Carrots', 'Soy Sauce','Sarlic']]
+
+ ];
+ return view('recipes.index');
+   
+})->name('recipes.index');
+
+

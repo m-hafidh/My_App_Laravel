@@ -22,9 +22,13 @@
             {{-- hover:text-gray-600 --}}
 
               {{-- Faire un lien vers les pages  --}}
-              <x-link-items href="/" :active="Route::currentRouteName() === 'homepage' ? true : false"> Homepage</x-link-items>
+              <x-link-items href="/" :active="Route::currentRouteName() == 'homepage' ? true : false"> Homepage</x-link-items>
               {{-- <li> <a href="/projects">Projects</a></li> --}}
-              <x-link-items href="/projects" :active="Route::currentRouteName() === 'projects' ? true : false"> Projects </x-link-items>
+              <x-link-items href="/projects" :active="Route::currentRouteName() == 'projects' ? true : false"> Projects </x-link-items>
+
+              {{-- Creer une nouvelle layoute pour les recettes --}}
+              <x-link-items href="/recipes" :active="Route::currentRouteName() == 'recipes.index' ? true : false"> Recettes </x-link-items>
+              
           
              {{-- <li><a href="#" class="hover:text-gray-600">Accueil</a></li>
              <li><a href="#" class="hover:text-gray-600">Services</a></li>
@@ -39,7 +43,7 @@
 
         {{-- footer --}}
 
-        <main class="flex-grow container mx-auto p-6">
+        <main class=" flex-grow container mx-auto p-6">
 
      {{-- ou bien avec cette methode  --}}
       {{$slot}} 
@@ -49,6 +53,7 @@
         
         <footer class="bg-gray-100 text-center p-4 mt-6">
             <p class="text-gray-600">&copy; 2025 MonSite. Tous droit réservés</p>
+        </footer>
     
 </body>
 </html>
